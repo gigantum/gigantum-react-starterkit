@@ -12,7 +12,7 @@ describe('Header snapshot Tests', () => {
 
   test('Sample of snapshot testing, not very useful, but shows how to do it', () => {
     const header = renderer.create(
-      <Header title="Snapshot Test #1"/>
+      <Header/>
     );
     const tree = header.toJSON();
     expect(tree).toMatchSnapshot();

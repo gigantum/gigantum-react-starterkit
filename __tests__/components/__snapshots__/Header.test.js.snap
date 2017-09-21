@@ -2,18 +2,11 @@
 
 exports[`Header snapshot Tests Sample of snapshot testing, not very useful, but shows how to do it 1`] = `
 <div
-  className="app-header"
+  className="app-header relative"
 >
   <h1
-    className="app-title"
-  >
-    Snapshot Test #1
-  </h1>
-  <h2
-    className="app-subtitle"
-  >
-    Test output over time in your component
-  </h2>
+    className="app-title text-center"
+  />
   <img
     alt="app-logo"
     className="app-logo"
