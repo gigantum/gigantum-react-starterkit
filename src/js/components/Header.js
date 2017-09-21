@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logoImg from 'images/logo.svg';
+import logoImg from 'images/bicycle.svg';
 
 export default class Header extends Component {
   displayName: 'Header';

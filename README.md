@@ -1,4 +1,4 @@
-# Commuter Weather app
+# Gigantum React Starter Kit
 
 ### Getting started
 This project requires [Node.js](https://nodejs.org/en/)
