@@ -1,0 +1,39 @@
+.app-header {
+  background-color: $theme-header;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  color: white;
+  height: 100px;
+  width: 100%;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  min-height: 80px;
+}
+
+.app-title, .app-subtitle {
+  padding-left: 10px;
+  margin: 0;
+}
+
+.app-title {
+  font-size: 24px;
+}
+
+.app-subtitle {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.app-logo {
+  position: absolute;
+  width: 80px;
+  right: 10px;
+  top: 10px;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}

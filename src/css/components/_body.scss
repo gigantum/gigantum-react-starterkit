@@ -1,0 +1,16 @@
+.body {
+  background: $background-navigation-vector;
+  // background: $background-darkgray-vector;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.app-body{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: white;
+}
