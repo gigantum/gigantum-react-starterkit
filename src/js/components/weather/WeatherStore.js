@@ -13,7 +13,8 @@ class WeatherStore {
 		this.hourly = null;
 		this.bindListeners({
 			initialize: weatherActions.initialize,
-			setWeatherData: weatherActions.setWeatherData
+			setWeatherData: weatherActions.setWeatherData,
+			setTransport: weatherActions.setTransport
 		});
 	}
 
