@@ -6,6 +6,8 @@ import {weatherActions} from 'js/components/weather/WeatherActions';
 
 import {getApiData} from 'js/utils/api';
 import {viewOptions} from 'js/config';
+import {findHourIndex} from 'js/utils/find-hour-index';
+
 
 export default class Body extends Component {
   constructor(props){
