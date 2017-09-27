@@ -16,14 +16,14 @@ class WeatherActions {
 			lowTemp = weather.temperatureLow
 			hourly = false;
 		}
-		else{
+		else{ //if hourly data is available
 			weather = response.hourly.data[hourIndex]
 			rainProb = weather.precipProbability
 			highTemp = weather.temperature
 			lowTemp = weather.temperature
 			hourly = true
 		}
-		commuteTime = setCommuteTime(weather.time, hourly)
+		commuteTime = setCommuteTime(weather.time, hourly) //sets commute time
 		return {weather, rainProb, highTemp, lowTemp, commuteTime, hourly}
 	}
 
