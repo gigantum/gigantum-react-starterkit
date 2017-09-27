@@ -10,7 +10,7 @@ export default class App extends Component {
   render () {
     return (
         <div className='root'>
-          <Header />
+          <Header title="Should I bike?"/>
           <Weather />
         </div>
 
