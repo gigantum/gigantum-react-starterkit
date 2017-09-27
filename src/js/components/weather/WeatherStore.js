@@ -5,6 +5,7 @@ import {dispatcher} from 'js/dispatcher';
 class WeatherStore {
 	constructor () {
     this.init = false
+		this.hourly = null;
 
 		this.bindListeners({
 			initialize: weatherActions.initialize
