@@ -38,7 +38,9 @@ export default class Body extends Component {
   render () {
 
     return (
-      <div>App</div>
+      <div className="app-body">
+        <UserInputContainer/>
+      </div>
     );
   }
 }
