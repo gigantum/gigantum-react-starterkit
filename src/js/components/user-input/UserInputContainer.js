@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 //Locals
 import {weatherStore} from 'js/components/weather/WeatherStore';
 import {weatherActions} from 'js/components/weather/WeatherActions';
+import UserInput from 'js/components/UserInput'
 
 export default class UserInputContainer extends Component {
 
@@ -12,7 +13,6 @@ export default class UserInputContainer extends Component {
 		weatherStore.listen(this.storeDidUpdate.bind(this));
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleChange(event) { //validates input and sends values to store if valid
@@ -59,7 +59,7 @@ export default class UserInputContainer extends Component {
     value: this.state.preferences.maxRain}]
 
     return (
-
+      <UserInput inputFields={inputFields} submitFunction={this.handleSubmit} changeFunction={this.handleChange}/>
     )
   }
 }
