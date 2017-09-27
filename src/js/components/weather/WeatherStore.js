@@ -14,6 +14,7 @@ class WeatherStore {
 		this.bindListeners({
 			initialize: weatherActions.initialize,
 			setWeatherData: weatherActions.setWeatherData,
+			setPrefs: weatherActions.setPrefs,
 			setTransport: weatherActions.setTransport
 		});
 	}
@@ -24,6 +25,14 @@ class WeatherStore {
 
 	setWeatherData(data){
 		this.setState(data);
+	}
+
+	setPrefs(prefs){
+		this.setState({preferences: prefs});
+	}
+
+	setTransport(value){
+		this.setState({transport:value})
 	}
 
 }

@@ -27,6 +27,10 @@ class WeatherActions {
 		return {weather, rainProb, highTemp, lowTemp, commuteTime, hourly}
 	}
 
+	setPrefs(prefs){ //sends user weather preferences
+		return prefs
+	}
+
 	setTransport(value){ //sends transportation type t
 		return value
 	}
