@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 //Locals
 import {weatherStore} from 'js/components/weather/WeatherStore';
 import {weatherActions} from 'js/components/weather/WeatherActions';
-import UserInput from 'js/components/UserInput'
+import UserInput from './UserInput'
 
 export default class UserInputContainer extends Component {
 

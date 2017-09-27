@@ -8,6 +8,8 @@ import {getApiData} from 'js/utils/api';
 import {viewOptions} from 'js/config';
 import {findHourIndex} from 'js/utils/find-hour-index';
 
+import UserInputContainer from 'js/components/user-input/UserInputContainer';
+
 export default class Body extends Component {
   constructor(props){
 		super(props);

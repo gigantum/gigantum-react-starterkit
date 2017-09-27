@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {weatherStore} from 'js/components/weather/WeatherStore';
 import {illuminatePic} from 'js/utils/illuminate-logo.js'
 
-import Results from 'js/components/Results';
+import Results from './Results';
 
 
 export default class ResultsContainer extends Component {
