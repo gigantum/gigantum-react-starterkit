@@ -13,6 +13,7 @@ export default class Results extends Component {
   displayName: 'Results';
 
   render () {
+
     return (
       <div className="results">
         <h2 className="subsection-title"> Based on your preferences, you should:</h2>

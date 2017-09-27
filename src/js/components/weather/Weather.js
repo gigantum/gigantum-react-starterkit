@@ -9,6 +9,7 @@ import {viewOptions} from 'js/config';
 import {findHourIndex} from 'js/utils/find-hour-index';
 
 import UserInputContainer from 'js/components/user-input/UserInputContainer';
+import ResultsContainer from 'js/components/results/ResultsContainer';
 
 export default class Body extends Component {
   constructor(props){
@@ -42,6 +43,7 @@ export default class Body extends Component {
     return (
       <div className="app-body">
         <UserInputContainer/>
+        <ResultsContainer/>
       </div>
     );
   }

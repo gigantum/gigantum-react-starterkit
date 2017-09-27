@@ -1,4 +1,5 @@
 import {dispatcher} from 'js/dispatcher';
+import {setCommuteTime} from 'js/utils/set-commute-time.js';
 
 class WeatherActions {
 	//actions passes off data to the store
