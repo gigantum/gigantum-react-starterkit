@@ -1,5 +1,5 @@
  //Since the Dark Sky API returns hourly data in an array, the app must know the
- //index of the hour of the user's commute. This function finds the hourly index.
+ //index corresponding to the user's commute time. This function return this hourly index.
  //If it is too far in advance of the next commute window (only 48 hours of data
  //are available), the function returns false.
 

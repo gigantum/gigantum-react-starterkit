@@ -1,3 +1,4 @@
+//Creates a string representation of commute time, based on the unix timestamp returned by weather data
 
 export const setCommuteTime = (unix_time, hourly) => {
 
