@@ -18,8 +18,16 @@ export default class Body extends Component {
     get api data when the component mounts
   */
   componentDidMount() {
+    var request, hourIndex;
     // Subscribe to the store for updates
-    weatherActions.initialize(); //initialize store
+    request = getApiData(); //get API data
+    request.onreadystatechange = function(){ //stores API data
+      if(request.readyState==4&&request.status==201){
+        weatherActions.initialize(); //initalizes store once API call is successful
+        hourIndex = findHourIndex(); //finds index that corresponds to commute in hourly data array
+        weatherActions.setWeatherData(request.responseText, hourIndex); //sends commute weather data to store
+      }
+    }
   }
 
   storeDidUpdate = () => {
