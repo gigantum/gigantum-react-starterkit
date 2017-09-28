@@ -1,4 +1,4 @@
->Please see below for details about various files
+>Please see below for additional information about the files in this directory
 
 #Weather.js
 >Since the app can't function without a response from the API, I had it initialize
@@ -20,5 +20,5 @@ in case the wrong hour was somehow calculated for the hourly weather data in
 the store.
 
 #utils folder
->I isolated a few functions and put them in here so they could easily be re-used
+>I extracted a few functions and put them in here so they could easily be re-used
 and tested.
