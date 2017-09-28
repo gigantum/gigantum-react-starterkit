@@ -20,12 +20,12 @@ export const setCommuteTime = (unix_time, hourly) => {
   }
   else if(morning){
     commuteBegin = hours%12 + ':' + minutes.substr(-2) + " " + "AM";
-    commuteEnd = hours%12+1 + ':' + minutes.substr(-2)+ " " + "AM ";
+    commuteEnd = hours%12+1 + ':' + minutes.substr(-2)+ " " + "AM";
     return commuteBegin + "-" + commuteEnd +", " + date;
   }
   else{
     commuteBegin = hours%12 + ':' + minutes.substr(-2)+ " " + "PM";
-    commuteEnd = hours%12+1 + ':' + minutes.substr(-2)+ " " + "PM ";
+    commuteEnd = hours%12+1 + ':' + minutes.substr(-2)+ " " + "PM";
     return commuteBegin + "-" + commuteEnd +", " + date;
   }
 }

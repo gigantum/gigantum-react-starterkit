@@ -11,7 +11,7 @@ class WeatherStore {
 		this.lowTemp = null;
 		this.highTemp = null;
 		this.hourly = null;
-		this.commuteTime = null;
+		this.commuteTime = "";
 		this.transport = null;
 		this.bindListeners({
 			initialize: weatherActions.initialize,

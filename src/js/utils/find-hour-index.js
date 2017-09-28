@@ -3,12 +3,11 @@
  //If it is too far in advance of the next commute window (only 48 hours of data
  //are available), the function returns false.
 
-export const findHourIndex = () => {
+export const findHourIndex = (time) => {
 
   var hourIndex, currentTime, currentHour, currentDay;
-  currentTime = new Date();
-  currentHour = currentTime.getHours();
-  currentDay = currentTime.getDay();
+  currentHour = time.getHours();
+  currentDay = time.getDay();
   if(currentHour>=18){ //if current time is at or after 6pm
       switch (currentDay) {
           case 5: //Friday

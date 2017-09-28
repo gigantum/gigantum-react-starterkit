@@ -28,7 +28,8 @@ export default class Body extends Component {
     request.onreadystatechange = function(){ //stores API data
       if(request.readyState==4&&request.status==201){
         weatherActions.initialize(); //initalizes store once API call is successful
-        hourIndex = findHourIndex(); //finds index that corresponds to commute in hourly data array
+        var currentTime = new Date();
+        hourIndex = findHourIndex(currentTime); //finds index that corresponds to commute in hourly data array
         weatherActions.setWeatherData(request.responseText, hourIndex); //sends commute weather data to store
       }
     }
