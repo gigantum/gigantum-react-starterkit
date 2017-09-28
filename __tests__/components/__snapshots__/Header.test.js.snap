@@ -7,10 +7,10 @@ exports[`Header snapshot Tests Sample of snapshot testing, not very useful, but 
   <h1
     className="app-title text-center"
   />
-  <img
-    alt="app-logo"
-    className="app-logo"
-    src={Object {}}
-  />
+  <h2
+    className="app-subtitle"
+  >
+    Fetching commute data...
+  </h2>
 </div>
 `;

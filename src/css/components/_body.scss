@@ -9,8 +9,37 @@
 
 .app-body{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
-  color: white;
+  color: black;
+}
+
+.subsection{
+  margin-top: 2%;
+  width: 25%;
+}
+
+.results{
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.preferences{
+  @extend .results;
+}
+
+.transport{
+  text-align: center;
+  margin: 0;
+}
+
+.subsection-title{
+  display:inline;
+  font-size: 15px;
+  margin: 10px 0;
+  line-height: normal;
 }

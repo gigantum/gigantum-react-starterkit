@@ -1,0 +1,23 @@
+
+.logos{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.transport{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caveat{
+  @extend .transport;
+  font-size: 12px;
+  line-height: normal;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
