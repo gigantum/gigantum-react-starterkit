@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 import {weatherStore} from 'js/components/weather/WeatherStore';
 import {weatherActions} from 'js/components/weather/WeatherActions';
 
-import {getApiData} from 'js/utils/api';
 import {viewOptions} from 'js/config';
 
 export default class Body extends Component {

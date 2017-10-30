@@ -5,6 +5,14 @@ class WeatherActions {
 	initialize(){
 		return null
 	}
+	
+	receivedLocation(location) {
+		
+	}
+		
+	locationAccessDenied(error) {
+		
+	}
 
 }
 export const weatherActions = dispatcher.createActions(WeatherActions);
