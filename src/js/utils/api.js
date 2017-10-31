@@ -1,18 +1,27 @@
-import {urls} from 'js/config';
+import { urls } from 'js/config';
 
-let fetchApiData = (appId) => {
+let fetchApiData = (data) => {
   let invocation = new XMLHttpRequest();
-  invocation.open('GET', urls.itemInfo(appId), true);
+  invocation.open('GET', urls.itemInfo(data), true);
   invocation.send();
 
   return invocation;
 }
 /**
-* @param {string} appId - API Id or to get info about
-*/
-export let getApiData = (apiId) => {
+ * @param {Object} data - contains latitude and longitude for API request
+ * @param {string} data.latitude
+ * @param {string} data.longitude
+ */
+export let getApiData = (data) => {
+  return new Promise((resolve, reject) => {
+    let invocation = fetchApiData(data);
+    invocation.onload = () => resolve(JSON.parse(invocation.responseText));
+    invocation.onerror = () => reject(JSON.parse(invocation.statusText));
+  })
+}
 
-    let invocation = fetchApiData(apiId)
-
-    return invocation;
+export const requestLocation = () => { 
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
 }
