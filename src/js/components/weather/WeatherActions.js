@@ -7,12 +7,23 @@ class WeatherActions {
 	}
 	
 	receivedLocation(location) {
-		
+		return location
 	}
 		
 	locationAccessDenied(error) {
-		
+		return error
 	}
 
+	receivedWeatherData(data) {
+		return data
+	}
+
+	weatherDataError(error) {
+		return error
+	}
+
+	loadingWeather() {
+		return 'loading'
+	}
 }
 export const weatherActions = dispatcher.createActions(WeatherActions);

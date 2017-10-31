@@ -1,13 +1,8 @@
 import { weatherActions } from './WeatherActions'
-import {getApiData} from 'js/utils/api';
 
-const requestLocation = () => { 
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-}
+import {getApiData, requestLocation } from 'js/utils/api';
 
-const WeatherSource = {
+export const WeatherSource = {
   updateLocation: {
     // remotely fetch something (required)
     remote(state) {
@@ -16,11 +11,12 @@ const WeatherSource = {
 
     // this function checks in our local cache first
     // if the value is present it'll use that instead (optional).
-    local(state) {
-      return state.results[state.location] ? state.location : null;
-    },
+    // local(state) {
+    //   return state.location ? state.location : null;
+    // },
 
     // here we setup some actions to handle our response
+    loading: weatherActions.loadingWeather,
     success: weatherActions.receivedLocation, // (required)
     error: weatherActions.locationAccessDenied, // (required)
 
@@ -29,5 +25,17 @@ const WeatherSource = {
     shouldFetch(state) {
       return true
     }
-  }
+  },
+  updateWeather: {
+    remote(state) {
+      return getApiData(state.location);
+    },
+
+    /* No local() method - we would not want to present outdated weather data*/
+    loading: weatherActions.loadingWeather,
+    success: weatherActions.receivedWeatherData,
+    error: weatherActions.weatherDataError,
+
+    /* No shouldFetch method needed without local method */
+  },
 };
