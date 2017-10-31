@@ -14,11 +14,15 @@ class WeatherStore {
 			handleReceivedLocation: weatherActions.receivedLocation,
 			handleNoLocationData: weatherActions.locationAccessDenied,
 			handleWeatherDataError: weatherActions.weatherDataError,
-			handleLoadingWeather: weatherActions.loadingWeather,
+			handleLoading: weatherActions.loadingData,
+			handleUserInput: weatherActions.userInput,
 		});
 	}
 
 	initialize() {
+		this.minTemp = 0;
+		this.maxTemp = 100;
+		this.maxChanceOfRain = 100;
 		this.init = true;
 	}
 
@@ -48,6 +52,10 @@ class WeatherStore {
 
 	handleLoading() {
 		this.phase = 'loading';
+	}
+
+	handleUserInput(data) {
+		this[data.key] = data.value;
 	}
 }
 
