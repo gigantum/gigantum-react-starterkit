@@ -27,7 +27,6 @@ class WeatherStore {
 			latitude: location.coords.latitude,
 			longitude: location.coords.longitude
 		};
-		console.log(this.location);
 	}
 
 	handleReceivedWeatherData(data) {
