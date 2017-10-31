@@ -1,15 +1,15 @@
-import {dispatcher} from 'js/dispatcher';
+import { dispatcher } from 'js/dispatcher';
 
 class WeatherActions {
 	//actions passes off data to the store
-	initialize(){
-		return null
+	initialize() {
+		return null;
 	}
-	
+
 	receivedLocation(location) {
 		return location
 	}
-		
+
 	locationAccessDenied(error) {
 		return error
 	}
@@ -23,7 +23,7 @@ class WeatherActions {
 	}
 
 	loadingWeather() {
-		return 'loading'
+		return null
 	}
 }
 export const weatherActions = dispatcher.createActions(WeatherActions);
