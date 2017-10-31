@@ -16,7 +16,7 @@ export const WeatherSource = {
     // },
 
     // here we setup some actions to handle our response
-    loading: weatherActions.loadingWeather,
+    loading: weatherActions.loadingData,
     success: weatherActions.receivedLocation, // (required)
     error: weatherActions.locationAccessDenied, // (required)
 
@@ -32,7 +32,7 @@ export const WeatherSource = {
     },
 
     /* No local() method - we would not want to present outdated weather data*/
-    loading: weatherActions.loadingWeather,
+    loading: weatherActions.loadingData,
     success: weatherActions.receivedWeatherData,
     error: weatherActions.weatherDataError,
 
