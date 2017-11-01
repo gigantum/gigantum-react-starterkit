@@ -8,9 +8,8 @@ let fetchApiData = (data) => {
   return invocation;
 }
 /**
- * @param {Object} data - contains latitude and longitude for API request
- * @param {string} data.latitude
- * @param {string} data.longitude
+ * Fetches data from api specified in js/config/urls
+ * @param {{latitude: string, longitude: string}} data - contains latitude and longitude for API request
  */
 export let getApiData = (data) => {
   return new Promise((resolve, reject) => {
@@ -20,6 +19,10 @@ export let getApiData = (data) => {
   })
 }
 
+/**
+ * Requests location access from browser
+ * @return {PromiseLike<object>}
+ */
 export const requestLocation = () => { 
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
