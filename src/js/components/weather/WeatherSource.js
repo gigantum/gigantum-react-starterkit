@@ -31,11 +31,12 @@ export const WeatherSource = {
       return getApiData(state.location);
     },
 
-    /* No local() method - we would not want to present outdated weather data*/
+    // No local() method - we would not want to present outdated weather data
+
     loading: weatherActions.loadingData,
     success: weatherActions.receivedWeatherData,
     error: weatherActions.weatherDataError,
 
-    /* No shouldFetch method needed without local method */
+    // No shouldFetch method needed without local method 
   },
 };

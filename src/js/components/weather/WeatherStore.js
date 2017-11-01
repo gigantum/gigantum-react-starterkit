@@ -15,15 +15,17 @@ class WeatherStore {
 			handleNoLocationData: weatherActions.locationAccessDenied,
 			handleWeatherDataError: weatherActions.weatherDataError,
 			handleLoading: weatherActions.loadingData,
-			handleUserInput: weatherActions.userInput,
+			handleTemperatureRange: weatherActions.temperatureRange,
+			handleMaxChanceOfRain: weatherActions.maxChanceOfRain,
+			handleCursorIsGrabbing: weatherActions.cursorIsGrabbing,
 		});
 	}
 
 	initialize() {
-		this.minTemp = 0;
-		this.maxTemp = 100;
 		this.maxChanceOfRain = 100;
 		this.init = true;
+		this.isGrabbing = "not-grabbing";
+		this.temperatureRange = [45, 80];
 	}
 
 	handleReceivedLocation(location) {
@@ -54,8 +56,16 @@ class WeatherStore {
 		this.phase = 'loading';
 	}
 
-	handleUserInput(data) {
-		this[data.key] = data.value;
+	handleTemperatureRange(range) {
+		this.temperatureRange = range;
+	}
+
+	handleMaxChanceOfRain(max) {
+		this.maxChanceOfRain = max;
+	}
+
+	handleCursorIsGrabbing(isGrabbing) {
+		this.isGrabbing = isGrabbing;
 	}
 }
 
