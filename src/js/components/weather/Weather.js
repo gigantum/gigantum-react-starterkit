@@ -6,6 +6,8 @@ import { weatherActions } from 'js/components/weather/WeatherActions';
 
 import { viewOptions } from 'js/config';
 
+import SequenceInput from 'js/components/weather/user-input/SequenceInput'
+
 export default class Body extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +23,6 @@ export default class Body extends Component {
     weatherActions.initialize(); //initialize store
     weatherStore.updateLocation()
       .then(weatherStore.updateWeather)
-      // .then((response) => {
-      //   console.log('weather', response)
-      // })
       .catch((error) => {
         console.error('error', error)
       })
@@ -36,7 +35,9 @@ export default class Body extends Component {
   render() {
 
     return (
-      <div>App</div>
+      <div>
+        <SequenceInput />
+      </div>
     );
   }
 }
