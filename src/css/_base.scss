@@ -33,6 +33,11 @@ ol, ul {
   cursor: pointer;
 }
 
+.grabbing {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
 .shadow {
   box-shadow: 2px 2px 2px $shadow-background;
 }
