@@ -1,12 +1,17 @@
 //Vendor
 import React, { Component } from 'react';
+import { HashRouter, Route } from 'react-router-dom';
+
 //Locals
 import { weatherStore } from 'js/components/weather/WeatherStore';
 import { weatherActions } from 'js/components/weather/WeatherActions';
 
 import { viewOptions } from 'js/config';
 
-import SequenceInput from 'js/components/weather/user-input/SequenceInput'
+import Landing from 'js/components/weather/landing/Landing';
+import Temperature from 'js/components/weather/user-input/Temperature';
+import Rain from 'js/components/weather/user-input/Rain';
+import Result from 'js/components/weather/result/Result';
 
 export default class Body extends Component {
   constructor(props) {
@@ -18,7 +23,7 @@ export default class Body extends Component {
   /*
     get api data when the component mounts
   */
-  componentDidMount() {
+  componentWillMount() {
     // Subscribe to the store for updates
     weatherActions.initialize(); //initialize store
     weatherStore.updateLocation()
@@ -35,9 +40,16 @@ export default class Body extends Component {
   render() {
 
     return (
-      <div>
-        <SequenceInput />
-      </div>
+      <HashRouter>
+        <div className="app-body">
+          <div className="body">
+            <Route exact path="/" component={Landing} />
+            <Route path="/temperature" component={Temperature} />
+            <Route path="/rain" component={Rain} />
+            <Route path="/result" component={Result} />
+          </div>
+        </div>
+      </HashRouter>
     );
   }
 }
