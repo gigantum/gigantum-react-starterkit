@@ -1,0 +1,19 @@
+.sequence-input {
+    
+    .display {
+        width: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: center;
+        &.half {
+            width: 50%;
+        }
+    }
+
+    .slider {
+        width: 80%;
+        max-width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

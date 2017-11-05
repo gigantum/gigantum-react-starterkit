@@ -18,6 +18,7 @@ class WeatherStore {
 			handleTemperatureRange: weatherActions.temperatureRange,
 			handleMaxChanceOfRain: weatherActions.maxChanceOfRain,
 			handleCursorIsGrabbing: weatherActions.cursorIsGrabbing,
+			handleShouldBike: weatherActions.youShouldBike,
 		});
 	}
 
@@ -26,6 +27,8 @@ class WeatherStore {
 		this.init = true;
 		this.isGrabbing = "not-grabbing";
 		this.temperatureRange = [45, 80];
+		this.morningCommute = 8;
+		this.shouldBike = false;
 	}
 
 	handleReceivedLocation(location) {
@@ -66,6 +69,10 @@ class WeatherStore {
 
 	handleCursorIsGrabbing(isGrabbing) {
 		this.isGrabbing = isGrabbing;
+	}
+
+	handleShouldBike(shouldBike) {
+		this.shouldBike = shouldBike;
 	}
 }
 

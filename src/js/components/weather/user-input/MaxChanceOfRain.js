@@ -4,7 +4,24 @@ import Slider from 'rc-slider';
 import { weatherActions, convenience } from '../WeatherActions';
 import { weatherStore } from '../WeatherStore';
 
-import 'css/vendor/rc-slider.scss';
+import 'rc-slider/assets/index.css';
+import './MaxChanceOfRain.scss'
+
+const style = {
+    track: {
+        color: 'white',
+        border: 'black',
+    },
+    rail: {
+        color: 'black',
+    },
+    dot: {
+        color: 'black',
+    },
+    activeDot: {
+        color: 'black',
+    }
+}
 
 class MaxChanceOfRain extends Component {
     constructor(props) {
@@ -13,19 +30,30 @@ class MaxChanceOfRain extends Component {
     }
 
     handleChange(max) {
+        this.props.handleSlide(max)
+    }
+    
+    handleAfterChange(max) {
+        convenience.isNotGrabbing();
         weatherActions.maxChanceOfRain(max);
+        weatherActions.youShouldBike();
     }
 
     render() {
         return (
-            <div>
+            <div className="max-chance-slider">
                 <Slider
                     min={0}
                     max={100}
-                    defaultValue={50}
+                    value={this.props.value || 0}
                     onBeforeChange={convenience.isGrabbing}
-                    onAfterChange={convenience.isNotGrabbing}
-                    onChange={this.handleChange} />
+                    onAfterChange={this.handleAfterChange}
+                    onChange={this.handleChange}
+                    trackStyle={style.track}
+                    railStyle={style.rail}
+                    dotStyle={style.dot}
+                    activeDotStyle={style.activeDot}
+                />
             </div>
         );
     }

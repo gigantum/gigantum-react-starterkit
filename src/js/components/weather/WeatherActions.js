@@ -1,4 +1,6 @@
 import { dispatcher } from 'js/dispatcher';
+import { weatherStore } from 'js/components/weather/WeatherStore';
+import { youShouldBikeToday } from 'js/utils/helpers'
 
 export const convenience = {
 	// Sets not-grabbing class to root to reset normal cursor
@@ -60,6 +62,12 @@ class WeatherActions {
 	 */
 	maxChanceOfRain(max) {
 		return max;
+	}
+
+	youShouldBike() {
+		const state = weatherStore.getState();
+		const answer = youShouldBikeToday(state);
+		return answer;
 	}
 }
 

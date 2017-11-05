@@ -4,7 +4,7 @@ import { Range } from "rc-slider";
 import { weatherActions, convenience } from '../WeatherActions';
 import { weatherStore } from '../WeatherStore';
 
-import 'css/vendor/rc-slider.scss'
+import 'rc-slider/assets/index.css'
 
 class TemperatureRange extends Component {
     constructor(props) {
@@ -13,7 +13,13 @@ class TemperatureRange extends Component {
     }
 
     handleChange(range) {
+        this.props.handleSlide(range)
+    }
+    
+    handleAfterChange(range) {
+        convenience.isNotGrabbing();
         weatherActions.temperatureRange(range);
+        weatherActions.youShouldBike();
     }
 
     render() {
@@ -23,11 +29,11 @@ class TemperatureRange extends Component {
                     count={2}
                     min={0}
                     max={100}
-                    defaultValue={[45, 80]}
+                    value={this.props.values || [50, 60]}
                     step={1}
                     pushable={10}
                     onBeforeChange={convenience.isGrabbing}
-                    onAfterChange={convenience.isNotGrabbing}
+                    onAfterChange={this.handleAfterChange} 
                     onChange={this.handleChange}
                 />
             </div>
