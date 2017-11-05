@@ -15,17 +15,15 @@ export const hoursTillCommute = (commuteTime, now) => {
 
 /**
  * Determines if the weather meets the user preferences for biking
- * @param {object} weatherData - from dark sky api
- * @param {{tempRange: array, maxChanceOfRain: number}} userPreferences
  * @return {boolean}
  */
-export const youShouldBikeToday = (weatherData, { morningCommute, tempRange, maxChanceOfRain }) => {
+export const youShouldBikeToday = ({weather, morningCommute, temperatureRange, maxChanceOfRain }) => {
     const hourOfCommute = hoursTillCommute(morningCommute, new Date())
-    const { temperature, precipProbability } = weatherData.hourly[hourOfCommute];
+    const { temperature, precipProbability } = weather.hourly.data[hourOfCommute];
     if (
-        temperature >= tempRange[0] &&
-        temperature <= tempRange[1] &&
-        precipProbability <= maxChanceOfRain
+        temperature >= temperatureRange[0] &&
+        temperature <= temperatureRange[1] &&
+        precipProbability * 100 <= maxChanceOfRain
     ) {
         return true
     }
