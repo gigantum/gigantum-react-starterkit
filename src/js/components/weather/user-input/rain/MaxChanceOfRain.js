@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Slider from 'rc-slider';
 
-import { weatherActions, convenience } from '../WeatherActions';
-import { weatherStore } from '../WeatherStore';
+import { weatherActions, convenience } from 'js/components/weather/WeatherActions';
+import { weatherStore } from 'js/components/weather/WeatherStore';
 
 import 'rc-slider/assets/index.css';
-import './MaxChanceOfRain.scss'
+import 'js/components/weather/user-input/rain/MaxChanceOfRain.scss'
 
 const style = {
     track: {
@@ -36,7 +36,9 @@ class MaxChanceOfRain extends Component {
     handleAfterChange(max) {
         convenience.isNotGrabbing();
         weatherActions.maxChanceOfRain(max);
-        weatherActions.youShouldBike();
+        if (weatherStore.getState().weather) {
+            weatherActions.youShouldBike();
+        }
     }
 
     render() {

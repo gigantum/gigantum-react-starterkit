@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { weatherStore } from 'js/components/weather/WeatherStore';
 
-import UserInputDisplay from './UserInputDisplay';
-import MaxChanceOfRain from './MaxChanceOfRain';
+import UserInputDisplay from 'js/components/weather/user-input/UserInputDisplay';
+import MaxChanceOfRain from 'js/components/weather/user-input/rain/MaxChanceOfRain';
 
 class Rain extends Component {
     constructor(props) {

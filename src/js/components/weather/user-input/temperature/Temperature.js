@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { weatherStore } from 'js/components/weather/WeatherStore';
 
-import UserInputDisplay from './UserInputDisplay';
-import TemperatureRange from './TemperatureRange';
-import './SequenceInput.scss'
+import UserInputDisplay from 'js/components/weather/user-input/UserInputDisplay';
+import TemperatureRange from 'js/components/weather/user-input/temperature/TemperatureRange';
+import 'js/components/weather/user-input/SequenceInput.scss'
 
 class Temperature extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class Temperature extends Component {
 
     handleSlide(range) {
         this.setState({ temperatureRange: range})
-    }    
+    }
 
     render() {
         return (

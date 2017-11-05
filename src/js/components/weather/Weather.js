@@ -9,8 +9,8 @@ import { weatherActions } from 'js/components/weather/WeatherActions';
 import { viewOptions } from 'js/config';
 
 import Landing from 'js/components/weather/landing/Landing';
-import Temperature from 'js/components/weather/user-input/Temperature';
-import Rain from 'js/components/weather/user-input/Rain';
+import Temperature from 'js/components/weather/user-input/temperature/Temperature';
+import Rain from 'js/components/weather/user-input/rain/Rain';
 import Result from 'js/components/weather/result/Result';
 
 export default class Body extends Component {
