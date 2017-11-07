@@ -13,6 +13,8 @@ import Temperature from 'js/components/weather/user-input/temperature/Temperatur
 import Rain from 'js/components/weather/user-input/rain/Rain';
 import Result from 'js/components/weather/result/Result';
 
+import 'js/components/weather/Weather.scss';
+
 export default class Body extends Component {
   constructor(props) {
     super(props);
@@ -43,10 +45,12 @@ export default class Body extends Component {
       <HashRouter>
         <div className="app-body">
           <div className="body">
-            <Route exact path="/" component={Landing} />
-            <Route path="/temperature" component={Temperature} />
-            <Route path="/rain" component={Rain} />
-            <Route path="/result" component={Result} />
+            <div className="container">
+              <Route exact path="/" component={Landing} />
+              <Route path="/temperature" component={Temperature} />
+              <Route path="/rain" component={Rain} />
+              <Route path="/result" component={Result} />
+            </div>  
           </div>
         </div>
       </HashRouter>

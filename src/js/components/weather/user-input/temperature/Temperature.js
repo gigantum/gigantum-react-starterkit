@@ -22,15 +22,15 @@ class Temperature extends Component {
         return (
             <div className="sequence-input">
                 <div className="display half">
-                    <UserInputDisplay name="Low temperature" value={this.state.temperatureRange[0]} />
+                    <UserInputDisplay name="Low temperature" value={`${this.state.temperatureRange[0]}°`} />
                 </div>
                 <div className="display half">
-                    <UserInputDisplay name="High temperature" value={this.state.temperatureRange[1]} />
+                    <UserInputDisplay name="High temperature" value={`${this.state.temperatureRange[1]}°`} />
                 </div>
                 <div className="slider">
                     <TemperatureRange values={this.state.temperatureRange} handleSlide={this.handleSlide}/>
                 </div>
-                <Link to="/rain"><button>Next</button></Link>
+                <Link to="/rain"><button className="sequence-button">Next</button></Link>
             </div>
         );
     }

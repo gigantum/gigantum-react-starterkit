@@ -21,13 +21,12 @@ class Rain extends Component {
         return (
             <div className="sequence-input">
                 <div className="display">
-                    <UserInputDisplay name="Max chance of rain" value={this.state.maxChanceOfRain}>
-                    </UserInputDisplay>
+                    <UserInputDisplay name="Max chance of rain" value={`${this.state.maxChanceOfRain}%`} />
                 </div>
                 <div className="slider">
                     <MaxChanceOfRain value={this.state.maxChanceOfRain} handleSlide={this.handleSlide}/>
                 </div>
-                <Link to="/result"><button>Okay!</button></Link>
+                <Link to="/result"><button className="sequence-button">Okay!</button></Link>
             </div>
         );
     }
