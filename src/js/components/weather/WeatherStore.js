@@ -17,6 +17,7 @@ class WeatherStore {
 			handleLoading: weatherActions.loadingData,
 			handleTemperatureRange: weatherActions.temperatureRange,
 			handleMaxChanceOfRain: weatherActions.maxChanceOfRain,
+			handleMaxRainIntensity: weatherActions.maxRainIntensity,
 			handleCursorIsGrabbing: weatherActions.cursorIsGrabbing,
 			handleShouldBike: weatherActions.youShouldBike,
 		});
@@ -65,6 +66,10 @@ class WeatherStore {
 
 	handleMaxChanceOfRain(max) {
 		this.maxChanceOfRain = max;
+	}
+
+	handleMaxRainIntensity(max) {
+		this.maxRainIntensity = max;
 	}
 
 	handleCursorIsGrabbing(isGrabbing) {

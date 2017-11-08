@@ -12,6 +12,7 @@ import Landing from 'js/components/weather/landing/Landing';
 import Temperature from 'js/components/weather/user-input/temperature/Temperature';
 import Rain from 'js/components/weather/user-input/rain/Rain';
 import Result from 'js/components/weather/result/Result';
+import Illustration from 'js/components/weather/illustration/Illustration'
 
 import 'js/components/weather/Weather.scss';
 
@@ -50,6 +51,7 @@ export default class Body extends Component {
               <Route path="/temperature" component={Temperature} />
               <Route path="/rain" component={Rain} />
               <Route path="/result" component={Result} />
+              <Route path="/svg-test" component={Illustration} />
             </div>  
           </div>
         </div>

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { weatherStore } from 'js/components/weather/WeatherStore';
 
 import UserInputDisplay from 'js/components/weather/user-input/UserInputDisplay';
-import MaxChanceOfRain from 'js/components/weather/user-input/rain/MaxChanceOfRain';
+import maxRainIntensity from 'js/components/weather/user-input/rain/maxRainIntensity';
 import Illustration from 'js/components/weather/illustration/Illustration'
 
-class Rain extends Component {
+class Intensity extends Component {
     constructor(props) {
         super(props);
         this.state = weatherStore.getState();
@@ -15,7 +15,7 @@ class Rain extends Component {
     }
 
     handleSlide(max) {
-        this.setState({ maxChanceOfRain: max })
+        this.setState({ maxRainIntensity: max })
     }
     
     render() {
@@ -23,10 +23,10 @@ class Rain extends Component {
             <div className="sequence-input">
                 <Illustration tempIntensity={4} chanceOfRain={100} rainIntensity={5}/> 
                 <div className="display">
-                    <UserInputDisplay name="Max chance of rain" value={`${this.state.maxChanceOfRain}%`} />
+                    <UserInputDisplay name="Possible rain intensity" value={`${this.state.maxRainIntensity}" / second`} />
                 </div>
                 <div className="slider">
-                    <MaxChanceOfRain value={this.state.maxChanceOfRain} handleSlide={this.handleSlide}/>
+                    <MaxRainIntensity value={this.state.maxRainIntensity} handleSlide={this.handleSlide}/>
                 </div>
                 <Link to="/result"><button className="sequence-button">Okay!</button></Link>
             </div>
@@ -34,4 +34,4 @@ class Rain extends Component {
     }
 }
 
-export default Rain;
+export default Intensity;

@@ -50,17 +50,15 @@ class WeatherActions {
 		return null
 	}
 	
-	/**
-	 * @param {array} range - [lower-limit, upper-limit]
-	 */
 	temperatureRange(range) {
 		return range;
 	}
 	
-	/**
-	 * @param {number} max 
-	 */
 	maxChanceOfRain(max) {
+		return max;
+	}
+
+	maxRainIntensity(max) {
 		return max;
 	}
 
