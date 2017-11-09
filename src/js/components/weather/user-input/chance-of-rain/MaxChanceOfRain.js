@@ -29,16 +29,28 @@ class MaxChanceOfRain extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+//     handleChange(max) {
+//         this.props.handleSlide(max)
+//     }
+    
+//     handleAfterChange(max) {
+//         convenience.isNotGrabbing();
+//         weatherActions.maxChanceOfRain(max);
+//         if (weatherStore.getState().weather) {
+//             weatherActions.youShouldBike();
+//         }
+//     }
+  
     handleChange(max) {
         this.props.handleSlide(max)
-    }
-    
-    handleAfterChange(max) {
-        convenience.isNotGrabbing();
         weatherActions.maxChanceOfRain(max);
         if (weatherStore.getState().weather) {
             weatherActions.youShouldBike();
         }
+    }
+  
+    handleAfterChange(max) {
+        convenience.isNotGrabbing();
     }
 
     render() {

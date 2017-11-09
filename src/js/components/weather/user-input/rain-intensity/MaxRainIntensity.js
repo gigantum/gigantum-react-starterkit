@@ -30,14 +30,14 @@ class MaxRainIntensity extends Component {
 
     handleChange(max) {
         this.props.handleSlide(max)
-    }
-    
-    handleAfterChange(max) {
-        convenience.isNotGrabbing();
         weatherActions.maxRainIntensity(max);
         if (weatherStore.getState().weather) {
             weatherActions.youShouldBike();
         }
+    }
+    
+    handleAfterChange(max) {
+        convenience.isNotGrabbing();
     }
 
     render() {

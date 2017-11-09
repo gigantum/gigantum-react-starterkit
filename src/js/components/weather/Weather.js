@@ -37,8 +37,8 @@ export default class Body extends Component {
       })
   }
   
-  applyBackground(props) {
-      return {background: `rgb(100, 150, ${255 - (this.state.maxChanceOfRain * 1.3)})`}
+  applyBackground() {
+      return {background: `rgb(100, 150, ${255 - (Math.floor(this.state.maxChanceOfRain * 1.3))})`}
   }
 
   storeDidUpdate = () => {
@@ -79,7 +79,6 @@ export default class Body extends Component {
   }
 
   render() {
-
     return (
       <HashRouter>
         <div className="app-body">

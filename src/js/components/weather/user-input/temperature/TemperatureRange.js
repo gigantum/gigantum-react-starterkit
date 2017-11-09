@@ -14,14 +14,14 @@ class TemperatureRange extends Component {
 
     handleChange(range) {
         this.props.handleSlide(range)
-    }
-    
-    handleAfterChange(range) {
-        convenience.isNotGrabbing();
         weatherActions.temperatureRange(range);
         if (weatherStore.getState().weather) {
             weatherActions.youShouldBike();
         }
+    }
+    
+    handleAfterChange(range) {
+        convenience.isNotGrabbing();
     }
 
     render() {
