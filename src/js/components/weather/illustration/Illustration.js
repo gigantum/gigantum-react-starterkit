@@ -8,9 +8,6 @@ class Illustration extends Component {
     constructor(props) {
         super(props);
         
-        this.state = {
-            background: this.applyBackground(props),
-        }
     }
     
    
