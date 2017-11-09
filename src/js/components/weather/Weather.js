@@ -38,11 +38,44 @@ export default class Body extends Component {
   }
   
   applyBackground(props) {
-      return {background: `rgb(100, 150, 255)`}
+      return {background: `rgb(100, 150, ${255 - (this.state.maxChanceOfRain * 1.3)})`}
   }
 
   storeDidUpdate = () => {
     this.setState(weatherStore.getState());//triggers re-render when store updates
+  }
+
+  tempIntensity() {
+    const range = this.state.temperatureRange[1] - this.state.temperatureRange[0];
+    const middle = this.state.temperatureRange[0] + (range / 2.0);
+    if (middle > 70) {
+      return 4;
+    } else if (middle > 60) {
+      return 3;
+    } else if (middle > 50) {
+      return 2;
+    } else if (middle > 40) {
+      return 1;
+    } 
+    return 0;
+  }
+
+  rainIntensity() {
+    const max = this.state.maxRainIntensity
+    if (max > 0.085) {
+      return 6
+    } else if (max > 0.70) {
+      return 5
+    } else if (max > 0.055) {
+      return 4
+    } else if (max > 0.04) {
+      return 3
+    } else if (max > 0.025) {
+      return 2
+    } else if (max > 0.01) {
+      return 1
+    }
+    return 0
   }
 
   render() {
@@ -52,7 +85,7 @@ export default class Body extends Component {
         <div className="app-body">
           <div className="body" style={this.applyBackground()}>
             <div className="container">
-              <Illustration tempIntensity={4} rainIntensity={5} chanceOfRain={this.state.maxChanceOfRian} />
+              <Illustration tempIntensity={this.tempIntensity()} rainIntensity={this.rainIntensity()} chanceOfRain={this.state.maxChanceOfRian} />
               <Route exact path="/" component={Landing} />
               <Route path="/temperature" component={Temperature} />
               <Route path="/chance-of-rain" component={ChanceOfRain} />

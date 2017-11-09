@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { weatherStore } from 'js/components/weather/WeatherStore';
 
 import UserInputDisplay from 'js/components/weather/user-input/UserInputDisplay';
-import maxRainIntensity from 'js/components/weather/user-input/rain-intensity/MaxRainIntensity';
+import MaxRainIntensity from 'js/components/weather/user-input/rain-intensity/MaxRainIntensity';
 
 class Intensity extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Intensity extends Component {
         return (
             <div className="sequence-input">
                 <div className="display">
-                    <UserInputDisplay name="Possible rain intensity" value={`${this.state.maxRainIntensity}" / second`} />
+                    <UserInputDisplay name="Possible rain intensity" value={`${this.state.maxRainIntensity || 0}"`} />
                 </div>
                 <div className="slider">
                     <MaxRainIntensity value={this.state.maxRainIntensity} handleSlide={this.handleSlide}/>

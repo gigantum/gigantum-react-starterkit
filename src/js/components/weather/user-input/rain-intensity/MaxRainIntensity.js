@@ -45,7 +45,8 @@ class MaxRainIntensity extends Component {
             <div className="max-chance-slider">
                 <Slider
                     min={0}
-                    max={100}
+                    max={0.1}
+                    step={0.005}
                     value={this.props.value || 0}
                     onBeforeChange={convenience.isGrabbing}
                     onAfterChange={this.handleAfterChange}
