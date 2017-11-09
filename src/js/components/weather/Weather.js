@@ -10,9 +10,10 @@ import { viewOptions } from 'js/config';
 
 import Landing from 'js/components/weather/landing/Landing';
 import Temperature from 'js/components/weather/user-input/temperature/Temperature';
-import Rain from 'js/components/weather/user-input/rain/Rain';
+import ChanceOfRain from 'js/components/weather/user-input/chance-of-rain/ChanceOfRain';
 import Result from 'js/components/weather/result/Result';
-import Illustration from 'js/components/weather/illustration/Illustration'
+import Illustration from 'js/components/weather/illustration/Illustration';
+import Intensity from 'js/components/weather/user-input/rain-intensity/Intensity';
 
 import 'js/components/weather/Weather.scss';
 
@@ -35,6 +36,10 @@ export default class Body extends Component {
         console.error('error', error)
       })
   }
+  
+  applyBackground(props) {
+      return {background: `rgb(100, 150, 255)`}
+  }
 
   storeDidUpdate = () => {
     this.setState(weatherStore.getState());//triggers re-render when store updates
@@ -45,13 +50,14 @@ export default class Body extends Component {
     return (
       <HashRouter>
         <div className="app-body">
-          <div className="body">
+          <div className="body" style={this.applyBackground()}>
             <div className="container">
+              <Illustration tempIntensity={4} rainIntensity={5} chanceOfRain={this.state.maxChanceOfRian} />
               <Route exact path="/" component={Landing} />
               <Route path="/temperature" component={Temperature} />
-              <Route path="/rain" component={Rain} />
+              <Route path="/chance-of-rain" component={ChanceOfRain} />
+              <Route path="/rain-intensity" component={Intensity} />
               <Route path="/result" component={Result} />
-              <Route path="/svg-test" component={Illustration} />
             </div>  
           </div>
         </div>

@@ -5,7 +5,7 @@ import { weatherActions, convenience } from 'js/components/weather/WeatherAction
 import { weatherStore } from 'js/components/weather/WeatherStore';
 
 import 'rc-slider/assets/index.css';
-import 'js/components/weather/user-input/rain/MaxChanceOfRain.scss'
+import 'js/components/weather/user-input/chance-of-rain/MaxChanceOfRain.scss'
 
 const style = {
     track: {

@@ -5,7 +5,6 @@ import { weatherStore } from 'js/components/weather/WeatherStore';
 
 import UserInputDisplay from 'js/components/weather/user-input/UserInputDisplay';
 import TemperatureRange from 'js/components/weather/user-input/temperature/TemperatureRange';
-import Illustration from 'js/components/weather/illustration/Illustration'
 
 import 'js/components/weather/user-input/SequenceInput.scss'
 
@@ -23,7 +22,6 @@ class Temperature extends Component {
     render() {
         return (
             <div className="sequence-input">
-                <Illustration tempIntensity={4} rainIntensity={5} chanceOfRain={this.state.maxChanceOfRian} />
                 <div className="display half">
                     <UserInputDisplay name="Low temperature" value={`${this.state.temperatureRange[0]}°`} />
                 </div>
@@ -33,7 +31,7 @@ class Temperature extends Component {
                 <div className="slider">
                     <TemperatureRange values={this.state.temperatureRange} handleSlide={this.handleSlide} />
                 </div>
-                <Link to="/rain"><button className="sequence-button">Next</button></Link>
+                <Link to="/chance-of-rain"><button className="sequence-button">Next</button></Link>
             </div>
         );
     }
