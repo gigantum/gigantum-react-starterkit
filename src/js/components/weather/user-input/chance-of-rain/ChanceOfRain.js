@@ -27,8 +27,8 @@ class ChanceOfRain extends Component {
                 <div className="slider">
                     <MaxChanceOfRain value={this.state.maxChanceOfRain} handleSlide={this.handleSlide}/>
                 </div>
-                <Link to="/temperature"><button className="sequence-button">Back</button></Link>
-                <Link to="/rain-intensity"><button className="sequence-button">Next</button></Link>
+                <Link to="/prefs/temperature"><button className="sequence-button">Back</button></Link>
+                <Link to="/prefs/rain-intensity"><button className="sequence-button">Next</button></Link>
             </div>
         );
     }

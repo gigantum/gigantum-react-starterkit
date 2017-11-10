@@ -29,7 +29,7 @@ class Intensity extends Component {
                 <div className="slider">
                     <MaxRainIntensity value={this.state.maxRainIntensity} handleSlide={this.handleSlide}/>
                 </div>
-                <Link to="/chance-of-rain"><button className="sequence-button">Back</button></Link>
+                <Link to="/prefs/chance-of-rain"><button className="sequence-button">Back</button></Link>
                 <Link to="/result"><button className="sequence-button">Okay!</button></Link>
             </div>
         );

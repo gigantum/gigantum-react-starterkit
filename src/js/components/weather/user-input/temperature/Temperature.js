@@ -33,7 +33,7 @@ class Temperature extends Component {
                     <TemperatureRange values={this.state.temperatureRange} handleSlide={this.handleSlide} />
                 </div>
                 <Link to="/"><button className="sequence-button">Back</button></Link>
-                <Link to="/chance-of-rain"><button className="sequence-button">Next</button></Link>
+                <Link to="/prefs/chance-of-rain"><button className="sequence-button">Next</button></Link>
             </div>
         );
     }

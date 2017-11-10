@@ -6,7 +6,7 @@ class Landing extends Component {
             <div>
                 <h2>Bike or metro?</h2>
           <p>Not sure if you should bike to work today? Tell us your weather preferences and we will make a decision for you!</p>
-                <Link to="/temperature">
+                <Link to="/prefs/temperature">
                     <button className="sequence-button">Start</button>
                 </Link>
             </div>
