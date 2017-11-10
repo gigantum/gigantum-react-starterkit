@@ -11,16 +11,20 @@ class Result extends Component {
         this.state = weatherStore.getState();
     }
 
-    
     componentDidMount() {
-        console.log('did mount')
+        weatherActions.atResult(true);
     }
+    
+    componentWillUnmount() {
+        weatherActions.atResult(false);
+    }
+    
 
     render() {
         return (
             <div>
-                {this.state.shouldBike ? <p>bike</p> : <p>metro</p>}
-                <Link to="/rain-intensity"><button className="sequence-button">Back</button></Link>
+                {this.state.shouldBike ? <h2>Ride your bike!</h2> : <h2>Take the metro</h2>}
+                <Link to="/prefs/rain-intensity"><button className="sequence-button">Back</button></Link>
             </div>
         );
     }
