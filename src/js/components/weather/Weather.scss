@@ -1,0 +1,24 @@
+
+.body {
+  
+    > .container { 
+        width: 80%;
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center; 
+
+        .slider {
+            margin-bottom: 4rem;
+        }
+        
+        .sequence-button {
+            background: none;
+            border: solid 1px black;
+            font-size: 2rem;
+            padding: 1rem;
+            width: 100px;
+            margin: 0 1rem 4rem 1rem;
+        }
+    }
+}

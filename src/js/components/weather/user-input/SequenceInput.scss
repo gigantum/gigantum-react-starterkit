@@ -1,0 +1,9 @@
+.display {
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    &.half {
+        width: 50%;
+    }
+}
