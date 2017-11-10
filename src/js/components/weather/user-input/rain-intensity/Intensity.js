@@ -20,12 +20,16 @@ class Intensity extends Component {
     render() {
         return (
             <div className="sequence-input">
+                <p>If it must rain :( ... what is the most rain you would tolerate (in inches per hour)?</p>
                 <div className="display">
-                    <UserInputDisplay name="Possible rain intensity" value={`${this.state.maxRainIntensity || 0}"`} />
+                    <UserInputDisplay 
+                        name="Possible rain intensity" 
+                        value={`${this.state.maxRainIntensity.toFixed(3) || 0}"`} />
                 </div>
                 <div className="slider">
                     <MaxRainIntensity value={this.state.maxRainIntensity} handleSlide={this.handleSlide}/>
                 </div>
+                <Link to="/chance-of-rain"><button className="sequence-button">Back</button></Link>
                 <Link to="/result"><button className="sequence-button">Okay!</button></Link>
             </div>
         );

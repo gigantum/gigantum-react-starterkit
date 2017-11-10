@@ -14,7 +14,7 @@ class Illustration extends Component {
     
     render() {
         return (
-            <div>
+            <div className="illustration">
                 <svg x="0px" y="0px" viewBox="0 0 500 300" >
                     <Biker intensity={this.props.tempIntensity || 0}/>
                     <Rain intensity={this.props.rainIntensity || 0}/>

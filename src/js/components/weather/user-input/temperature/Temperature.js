@@ -22,6 +22,7 @@ class Temperature extends Component {
     render() {
         return (
             <div className="sequence-input">
+                <p>What are the highest and lowest temperatures you would ride in?</p>
                 <div className="display half">
                     <UserInputDisplay name="Low temperature" value={`${this.state.temperatureRange[0]}°`} />
                 </div>
@@ -31,6 +32,7 @@ class Temperature extends Component {
                 <div className="slider">
                     <TemperatureRange values={this.state.temperatureRange} handleSlide={this.handleSlide} />
                 </div>
+                <Link to="/"><button className="sequence-button">Back</button></Link>
                 <Link to="/chance-of-rain"><button className="sequence-button">Next</button></Link>
             </div>
         );
