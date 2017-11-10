@@ -67,6 +67,10 @@ class WeatherActions {
 		const answer = youShouldBikeToday(state);
 		return answer;
 	}
+
+	atResult(atResult) {
+		return atResult;
+	}
 }
 
 export const weatherActions = dispatcher.createActions(WeatherActions);

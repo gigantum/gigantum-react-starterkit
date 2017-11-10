@@ -2,6 +2,7 @@
 import { weatherActions } from 'js/components/weather/WeatherActions';
 import { dispatcher } from 'js/dispatcher';
 import { WeatherSource } from 'js/components/weather/WeatherSource';
+import { commuteWeather } from 'js/utils/helpers';
 
 class WeatherStore {
 	constructor() {
@@ -20,6 +21,7 @@ class WeatherStore {
 			handleMaxRainIntensity: weatherActions.maxRainIntensity,
 			handleCursorIsGrabbing: weatherActions.cursorIsGrabbing,
 			handleShouldBike: weatherActions.youShouldBike,
+			handleAtResult: weatherActions.atResult,
 		});
 	}
 
@@ -30,7 +32,9 @@ class WeatherStore {
 		this.temperatureRange = [45, 80];
 		this.maxRainIntensity = 0;
 		this.morningCommute = 8;
+		this.eveningCommute = 17;
 		this.shouldBike = false;
+		this.atResult = false;
 	}
 
 	handleReceivedLocation(location) {
@@ -42,6 +46,8 @@ class WeatherStore {
 
 	handleReceivedWeatherData(data) {
 		this.weather = data;
+		this.morningWeather = commuteWeather(data, this.morningCommute);
+		this.eveningWeather = commuteWeather(data, this.eveningCommute);
 		this.phase = 'success';
 	}
 
@@ -79,6 +85,10 @@ class WeatherStore {
 
 	handleShouldBike(shouldBike) {
 		this.shouldBike = shouldBike;
+	}
+
+	handleAtResult(atResult) {
+		this.atResult = atResult;
 	}
 }
 
